@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1>Hello World</h1>
-    <app-car></app-car>
+    <h1>{{ title }}</h1>
+    <app-car carName="Ford" :carYear="2019"></app-car>
+    <app-car :carName="carNameFromParent" :carYear="2018"></app-car>
   </div>
 </template>
 
@@ -11,7 +12,8 @@ import Car from "./Components/Car.vue";
 export default {
   data() {
     return {
-      msg: "Welcome to Vue"
+      title: "Car Sale",
+      carNameFromParent: "BMW" //свойство можно передать в параметр компонента
     };
   },
   components: {
